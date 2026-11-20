@@ -21,4 +21,4 @@ Abre `index.html` en el navegador.
 
 1. Sube los cambios a la rama `main`.
 2. En GitHub: **Settings → Pages → Source: Deploy from a branch → `main` / root**.
-3. El sitio quedará en `https://mgl01902-cmyk.github.io/Portafolio-Miguel/`.
+3. El sitio quedará en `https://miguel-ux-ui.github.io/Portafolio-Miguel/`.
