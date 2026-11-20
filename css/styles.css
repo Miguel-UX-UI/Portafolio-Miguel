@@ -70,8 +70,11 @@ img { max-width: 100%; display: block; }
 .nav-menu { display: flex; align-items: center; }
 
 .nav-link {
-  height: 35px;
-  padding: 8px 24px;
+  display: inline-flex;
+  align-items: center;
+  height: 42px;
+  padding: 0 24px;
+  border-radius: 180px;
   font-size: 16px;
   color: var(--muted);
   transition: background-color .4s, color .4s;
