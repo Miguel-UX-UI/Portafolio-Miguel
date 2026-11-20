@@ -210,7 +210,7 @@ body.dark .menu-button span { background: #fff; }
 .about-columns {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch;
   padding-top: 58px;
 }
 .about-bio { width: 50%; }
@@ -221,9 +221,22 @@ body.dark .menu-button span { background: #fff; }
   line-height: 38px;
   letter-spacing: -1px;
 }
-.about-media { width: 50%; padding-left: 130px; }
+.about-bio p:last-child { margin-bottom: 0; }
+/* La columna de la foto toma exactamente la altura del texto */
+.about-media { width: 50%; padding-left: 130px; position: relative; }
+.about-media .about-photo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 130px;
+  width: calc(100% - 130px);
+  height: 100%;
+  aspect-ratio: auto;
+  object-position: center 35%;
+}
 
 .about-photo {
+  display: block;
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
@@ -383,6 +396,7 @@ body.dark .footer { background: #141414; }
 
   .about-columns { flex-direction: column; gap: 48px; }
   .about-bio, .about-media { width: 100%; padding-left: 0; }
+  .about-media .about-photo { position: static; width: 100%; height: auto; aspect-ratio: 4 / 5; }
   .about-bio p, .experience-line, .service-list { font-size: 22px; line-height: 32px; }
   .experience-time { width: 160px; }
   .experience-title { width: auto; }
