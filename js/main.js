@@ -1,7 +1,7 @@
 // Renderiza las tarjetas de proyectos
 const container = document.getElementById("projects");
 
-PROJECTS.forEach((p) => {
+if (container && typeof PROJECTS !== "undefined") PROJECTS.forEach((p) => {
   const card = document.createElement("article");
   card.className = "case-study";
 
@@ -42,7 +42,7 @@ const observer = new IntersectionObserver(
   },
   { threshold: 0.15 }
 );
-document.querySelectorAll(".case-study").forEach((el) => observer.observe(el));
+document.querySelectorAll(".case-study, .reveal").forEach((el) => observer.observe(el));
 
 // Menú móvil
 const menuButton = document.querySelector(".menu-button");
