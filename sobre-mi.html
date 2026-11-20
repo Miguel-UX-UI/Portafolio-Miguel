@@ -4,20 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sobre mí | Miguel Martínez</title>
-  <meta name="description" content="Experiencia, formación y habilidades de Miguel Martínez." />
+  <meta name="description" content="Miguel Martínez — User Experience Designer. Experiencia en diseño UX, branding y diseño gráfico." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/styles.css?v=3" />
 </head>
-<body>
+<body class="dark">
 
   <!-- ===== Navegación ===== -->
   <header class="navbar">
     <a href="index.html" class="brand" aria-label="Inicio">
       <span class="brand-mark">MM</span>
       <span class="brand-name">
-        <span class="brand-role">Portafolio</span>
+        <span class="brand-role">Diseñador</span>
         <span class="brand-title">Miguel Martínez</span>
       </span>
     </a>
@@ -36,114 +36,137 @@
   <main class="about">
 
     <!-- ===== Intro ===== -->
-    <section class="about-hero">
-      <div class="about-intro reveal">
-        <h1 class="heading">Hola, soy Miguel</h1>
-        <!-- TODO: reemplaza con tu titular de LinkedIn -->
-        <p class="about-lead">[Tu titular profesional — ej. "Cargo · Especialidad · Industria"]</p>
-        <!-- TODO: reemplaza con tu sección "Acerca de" de LinkedIn -->
-        <p>[Tu resumen profesional: quién eres, qué haces, en qué te especializas y qué tipo de proyectos te motivan. 3–5 líneas funcionan bien.]</p>
-        <div class="about-actions">
-          <a href="https://www.linkedin.com/in/miguelmartinezmo/" target="_blank" rel="noopener" class="pill pill-dark">Ver LinkedIn</a>
-          <a href="#contacto" class="pill pill-light">Contacto</a>
-        </div>
+    <h1 class="about-statement first reveal">
+      Miguel es diseñador de experiencias. Transforma requerimientos de negocio en interfaces claras, funcionales y escalables.
+    </h1>
+
+    <section class="about-columns">
+      <div class="about-bio reveal">
+        <p>Actualmente trabajo como User Experience Designer en Opi Technology, diseñando experiencias digitales centradas en el usuario y colaborando de cerca con equipos de producto y desarrollo bajo metodologías ágiles.</p>
+        <p>Antes de dar el salto al diseño UX, construí una base sólida en branding y diseño gráfico: fui Creative Content Expert Sr. en TP, diseñador gráfico en MarkU y Sipote Agencia, y empecé mi carrera creando identidades de marca en Branderos, en Bogotá.</p>
+        <p>Esa mezcla entre marca y producto es lo que define mi trabajo: interfaces que no solo funcionan, sino que también comunican.</p>
       </div>
-      <!-- TODO: agrega tu foto en img/miguel.jpg y cambia el div por <img src="img/miguel.jpg" alt="Miguel Martínez" class="about-photo"> -->
-      <div class="about-photo placeholder reveal">Tu foto</div>
+      <div class="about-media reveal">
+        <!-- Agrega tu foto en img/miguel.jpg y reemplaza este div por:
+             <img src="img/miguel.jpg" alt="Miguel Martínez" class="about-photo"> -->
+        <div class="about-photo placeholder">Tu foto</div>
+      </div>
     </section>
 
     <!-- ===== Experiencia ===== -->
-    <section class="about-section reveal">
-      <h2 class="section-heading">Experiencia</h2>
-      <ol class="timeline">
-        <!-- TODO: una <li> por cada puesto de LinkedIn, del más reciente al más antiguo -->
-        <li class="timeline-item">
-          <span class="timeline-date">20XX — Actualidad</span>
-          <div>
-            <h3>[Cargo]</h3>
-            <p class="timeline-company">[Empresa] · [Ciudad]</p>
-            <p>[Logros o responsabilidades principales en 1–2 líneas.]</p>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <span class="timeline-date">20XX — 20XX</span>
-          <div>
-            <h3>[Cargo]</h3>
-            <p class="timeline-company">[Empresa] · [Ciudad]</p>
-            <p>[Logros o responsabilidades principales en 1–2 líneas.]</p>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <span class="timeline-date">20XX — 20XX</span>
-          <div>
-            <h3>[Cargo]</h3>
-            <p class="timeline-company">[Empresa] · [Ciudad]</p>
-            <p>[Logros o responsabilidades principales en 1–2 líneas.]</p>
-          </div>
-        </li>
-      </ol>
+    <section class="about-block">
+      <h2 class="about-statement section reveal">7+ años diseñando marcas y experiencias digitales.</h2>
+
+      <div class="experience reveal">
+        <div class="experience-row">
+          <div class="experience-line experience-time">2025—Actualidad</div>
+          <div class="experience-line experience-place">Opi Technology <span class="fade">/ Remoto</span></div>
+          <div class="experience-line experience-title">User Experience Designer</div>
+        </div>
+        <div class="experience-row">
+          <div class="experience-line experience-time">2023—2025</div>
+          <div class="experience-line experience-place">TP <span class="fade">/ Tiempo completo</span></div>
+          <div class="experience-line experience-title">Creative Content Expert Sr.</div>
+        </div>
+        <div class="experience-row">
+          <div class="experience-line experience-time">2022</div>
+          <div class="experience-line experience-place">MarkU <span class="fade">/ Remoto</span></div>
+          <div class="experience-line experience-title">Jr. Graphic Designer</div>
+        </div>
+        <div class="experience-row">
+          <div class="experience-line experience-time">2020—2022</div>
+          <div class="experience-line experience-place">Sipote Agencia <span class="fade">/ Remoto</span></div>
+          <div class="experience-line experience-title">Jr. Graphic Designer</div>
+        </div>
+        <div class="experience-row">
+          <div class="experience-line experience-time">2019—2020</div>
+          <div class="experience-line experience-place">Branderos <span class="fade">/ Bogotá</span></div>
+          <div class="experience-line experience-title">Branding Designer</div>
+        </div>
+      </div>
+
+      <div class="about-buttons">
+        <a href="https://www.linkedin.com/in/miguelmartinezmo/" target="_blank" rel="noopener" class="pill">Ver LinkedIn</a>
+        <a href="#contacto" class="pill red">Contáctame</a>
+      </div>
     </section>
 
-    <!-- ===== Educación ===== -->
-    <section class="about-section reveal">
-      <h2 class="section-heading">Educación</h2>
-      <ol class="timeline">
-        <li class="timeline-item">
-          <span class="timeline-date">20XX — 20XX</span>
-          <div>
-            <h3>[Título / Carrera]</h3>
-            <p class="timeline-company">[Universidad]</p>
-          </div>
-        </li>
-      </ol>
+    <!-- ===== Servicios ===== -->
+    <section class="about-block">
+      <h2 class="about-statement section reveal">Uno el diseño de producto con la fuerza de una marca para crear experiencias que se entienden y se recuerdan.</h2>
+
+      <div class="services reveal">
+        <div>
+          <div class="experience-line">Diseño UX/UI</div>
+          <ul class="service-list">
+            <li>Investigación de usuarios</li>
+            <li>Arquitectura de información</li>
+            <li>Wireframes</li>
+            <li>Prototipado</li>
+            <li>Diseño de interfaces</li>
+            <li>Sistemas de diseño</li>
+            <li>Metodologías ágiles</li>
+          </ul>
+        </div>
+        <div>
+          <div class="experience-line">Branding</div>
+          <ul class="service-list">
+            <li>Identidad de marca</li>
+            <li>Brand Design</li>
+            <li>Lineamientos de marca</li>
+            <li>Social Media</li>
+            <li>Contenido creativo</li>
+          </ul>
+        </div>
+        <div>
+          <div class="experience-line">Diseño gráfico</div>
+          <ul class="service-list">
+            <li>Adobe Creative Suite</li>
+            <li>Photoshop</li>
+            <li>Illustrator</li>
+            <li>Dirección visual</li>
+            <li>Piezas digitales</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
-    <!-- ===== Habilidades ===== -->
-    <section class="about-section reveal">
-      <h2 class="section-heading">Habilidades</h2>
-      <ul class="chips">
-        <li>[Habilidad 1]</li>
-        <li>[Habilidad 2]</li>
-        <li>[Habilidad 3]</li>
-        <li>[Habilidad 4]</li>
-        <li>[Habilidad 5]</li>
-        <li>[Herramienta 1]</li>
-        <li>[Herramienta 2]</li>
-        <li>[Idioma]</li>
-      </ul>
-    </section>
+    <!-- ===== Imagen a todo el ancho (reemplazar por una foto) ===== -->
+    <div class="about-wide reveal">Imagen a todo el ancho</div>
   </main>
 
   <!-- ===== Footer / Contacto ===== -->
-  <footer id="contacto" class="footer">
-    <div class="footer-top">
-      <h2 class="footer-heading">Trabajemos juntos</h2>
-      <a href="mailto:correo@ejemplo.com" class="footer-button">Escríbeme</a>
-    </div>
+  <section id="contacto" class="footer-section">
+    <a href="mailto:correo@ejemplo.com" class="cta-red">
+      <h2 class="heading">Trabajemos juntos</h2>
+      <svg class="cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 4v16M5 13l7 7 7-7"/></svg>
+    </a>
 
-    <div class="footer-grid">
-      <div>
-        <h3 class="footer-label">Contacto</h3>
-        <p>Ciudad, País</p>
-        <a href="mailto:correo@ejemplo.com">correo@ejemplo.com</a>
+    <footer class="footer">
+      <h2 class="heading">Conecta</h2>
+      <div class="footer-grid">
+        <div>
+          <h3 class="footer-label">Contacto</h3>
+          <p>Bogotá, Colombia</p>
+          <a href="mailto:correo@ejemplo.com">correo@ejemplo.com</a>
+        </div>
+        <div>
+          <h3 class="footer-label">Redes</h3>
+          <ul class="social">
+            <li><a href="https://www.linkedin.com/in/miguelmartinezmo/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/mgl01902-cmyk" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-label">Proyectos</h3>
+          <p>Mira algunos de los proyectos en los que he trabajado.</p>
+          <a href="index.html">Ver proyectos →</a>
+        </div>
       </div>
-      <div>
-        <h3 class="footer-label">Conecta</h3>
-        <ul class="social">
-          <li><a href="https://www.linkedin.com/in/miguelmartinezmo/" target="_blank" rel="noopener">LinkedIn</a></li>
-          <li><a href="https://github.com/mgl01902-cmyk" target="_blank" rel="noopener">GitHub</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="footer-label">Proyectos</h3>
-        <p>Mira algunos de los proyectos en los que he trabajado.</p>
-        <a href="index.html">Ver proyectos →</a>
-      </div>
-    </div>
+      <p class="footer-copy">© <span id="year"></span> Miguel Martínez</p>
+    </footer>
+  </section>
 
-    <p class="footer-copy">© <span id="year"></span> Miguel Martínez</p>
-  </footer>
-
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=3"></script>
 </body>
 </html>
