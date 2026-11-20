@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proyectos | Miguel Martínez</title>
+  <meta name="description" content="Portafolio de proyectos de Miguel Martínez." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===== Navegación ===== -->
+  <header class="navbar">
+    <a href="index.html" class="brand" aria-label="Inicio">
+      <span class="brand-mark">MM</span>
+      <span class="brand-name">
+        <span class="brand-role">Portafolio</span>
+        <span class="brand-title">Miguel Martínez</span>
+      </span>
+    </a>
+
+    <button class="menu-button" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+
+    <nav class="nav-menu">
+      <a href="index.html" class="nav-link is-current">Proyectos</a>
+      <a href="#sobre-mi" class="nav-link">Sobre mí</a>
+      <a href="#contacto" class="nav-cta">Trabajemos juntos</a>
+    </nav>
+  </header>
+
+  <!-- ===== Proyectos destacados ===== -->
+  <main class="featured-work">
+    <h1 class="heading">Proyectos destacados</h1>
+
+    <!-- Las tarjetas se generan desde js/projects.js -->
+    <div id="projects" class="case-studies"></div>
+  </main>
+
+  <!-- ===== Footer / Contacto ===== -->
+  <footer id="contacto" class="footer">
+    <div class="footer-top">
+      <h2 class="footer-heading">Trabajemos juntos</h2>
+      <a href="mailto:correo@ejemplo.com" class="footer-button">Escríbeme</a>
+    </div>
+
+    <div class="footer-grid" id="sobre-mi">
+      <div>
+        <h3 class="footer-label">Contacto</h3>
+        <p>Ciudad, País</p>
+        <a href="mailto:correo@ejemplo.com">correo@ejemplo.com</a>
+      </div>
+      <div>
+        <h3 class="footer-label">Conecta</h3>
+        <ul class="social">
+          <li><a href="https://www.linkedin.com/in/miguelmartinezmo/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/mgl01902-cmyk" target="_blank" rel="noopener">GitHub</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="footer-label">Sobre mí</h3>
+        <p>Breve descripción profesional. Aquí irá un resumen de tu experiencia.</p>
+      </div>
+    </div>
+
+    <p class="footer-copy">© <span id="year"></span> Miguel Martínez</p>
+  </footer>
+
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

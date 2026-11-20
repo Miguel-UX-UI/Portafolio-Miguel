@@ -1,0 +1,283 @@
+/* ===== Base ===== */
+:root {
+  --bg: #fcfcfc;
+  --text: #000;
+  --muted: #5e5e5e;
+  --hover: #dfdfdf;
+  --accent: #cf3000;
+  --radius: 20px;
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 24px auto;
+  padding: 0 16px;
+  height: 50px;
+  position: relative;
+  z-index: 10;
+}
+
+.brand { display: flex; align-items: center; gap: 10px; }
+
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -.04em;
+}
+
+.brand-name { display: flex; flex-direction: column; gap: 2px; }
+.brand-role,
+.brand-title {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -.07em;
+  line-height: 1;
+}
+.brand-role { color: var(--muted); }
+
+.nav-menu { display: flex; align-items: center; }
+
+.nav-link {
+  height: 35px;
+  padding: 8px 24px;
+  font-size: 16px;
+  color: var(--muted);
+  transition: background-color .4s, color .4s;
+}
+.nav-link:hover { background: var(--hover); color: var(--text); }
+.nav-link.is-current { color: var(--text); font-weight: 500; }
+
+.nav-cta {
+  height: 35px;
+  margin-left: 24px;
+  padding: 8px 18px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  background: #000;
+  transition: background-color .4s;
+}
+.nav-cta:hover { background: var(--accent); }
+
+.menu-button {
+  display: none;
+  background: none;
+  border: 0;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px;
+}
+.menu-button span { display: block; height: 2px; background: #000; }
+
+/* ===== Proyectos destacados ===== */
+.featured-work {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 40px 10px 0;
+}
+
+.heading {
+  margin: 0 0 40px;
+  font-size: 100px;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -6px;
+}
+
+.case-studies { display: flex; flex-direction: column; gap: 16px; }
+
+.case-study {
+  height: 800px;
+  border-radius: var(--radius);
+  padding: 60px 100px;
+  display: flex;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .9s ease, transform .9s ease;
+}
+.case-study.is-visible { opacity: 1; transform: none; }
+
+.case-study-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 34px;
+  width: 100%;
+}
+
+.case-study-logo { max-width: 148px; }
+.case-study-client {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -.03em;
+  opacity: .85;
+}
+
+.case-study-text { display: flex; flex-direction: column; gap: 34px; }
+
+.h3-display {
+  margin: 0;
+  max-width: 480px;
+  color: #fff;
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 58px;
+  letter-spacing: -3px;
+}
+
+.case-study-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 230px;
+  height: 54px;
+  border-radius: 180px;
+  background: #fff;
+  color: #000;
+  font-size: 18px;
+  transition: transform .4s, background-color .4s;
+}
+a.case-study-button:hover { transform: scale(1.04); }
+.case-study-button.is-disabled {
+  background: rgba(255, 255, 255, .33);
+  color: #c2c2c2;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  cursor: default;
+}
+
+/* ===== Footer ===== */
+.footer {
+  max-width: 1580px;
+  margin: 16px auto 24px;
+  margin-inline: 10px;
+  padding: 60px;
+  border-radius: var(--radius);
+  background: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 61px;
+}
+@media (min-width: 1620px) { .footer { margin-inline: auto; } }
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-heading {
+  margin: 0;
+  font-size: 100px;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -6px;
+}
+
+.footer-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 230px;
+  height: 54px;
+  border-radius: 180px;
+  background: #fff;
+  color: #000;
+  font-size: 18px;
+  transition: background-color .4s, color .4s;
+}
+.footer-button:hover { background: var(--accent); color: #fff; }
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  color: #bdbdbd;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.footer-grid p { margin: 0 0 4px; }
+.footer-grid a:hover { color: #fff; }
+
+.footer-label {
+  margin: 0 0 12px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.social { list-style: none; margin: 0; padding: 0; }
+
+.footer-copy { margin: 0; color: #777; font-size: 14px; }
+
+/* ===== Responsive ===== */
+@media (max-width: 991px) {
+  .heading, .footer-heading { font-size: 72px; letter-spacing: -4px; }
+  .case-study { height: 640px; padding: 48px; }
+  .h3-display { font-size: 44px; line-height: 48px; letter-spacing: -2px; }
+}
+
+@media (max-width: 767px) {
+  .menu-button { display: flex; }
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 16px;
+    left: 16px;
+    flex-direction: column;
+    align-items: stretch;
+    background: #fff;
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+  }
+  .nav-menu.is-open { display: flex; }
+  .nav-link { height: auto; padding: 14px 16px; }
+  .nav-cta { margin: 8px 0 0; height: auto; padding: 14px 16px; text-align: center; }
+
+  .heading, .footer-heading { font-size: 48px; letter-spacing: -2px; }
+  .case-study { height: 520px; padding: 32px 24px; }
+  .h3-display { font-size: 34px; line-height: 38px; letter-spacing: -1.5px; }
+  .case-study-button, .footer-button { width: 190px; height: 48px; font-size: 16px; }
+  .footer { padding: 40px 24px; gap: 40px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+}
