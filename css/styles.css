@@ -45,16 +45,11 @@ img { max-width: 100%; display: block; }
 .brand { display: flex; align-items: center; gap: 10px; }
 
 .brand-mark {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: #000;
-  color: #fff;
-  display: grid;
-  place-items: center;
-  font-weight: 600;
-  font-size: 15px;
-  letter-spacing: -.04em;
+  display: block;
+  width: 48px;
+  height: 22px;
+  flex: none;
+  color: #021232;
 }
 
 .brand-name { display: flex; flex-direction: column; gap: 2px; }
@@ -185,7 +180,7 @@ a.case-study-button:hover { transform: scale(1.04); }
 
 /* ===== Tema oscuro (Sobre mí) ===== */
 body.dark { background: #000; color: #fff; }
-body.dark .brand-mark { background: #fff; color: #000; }
+body.dark .brand-mark { color: #fff; }
 body.dark .brand-role { color: #8a8a8a; }
 body.dark .brand-title { color: #fff; }
 body.dark .nav-link { color: #9a9a9a; }
