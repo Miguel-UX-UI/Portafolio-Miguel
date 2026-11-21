@@ -46,8 +46,8 @@ img { max-width: 100%; display: block; }
 
 .brand-mark {
   display: block;
-  width: 48px;
-  height: 22px;
+  width: 63px;
+  height: 29px; /* alto de la mayúscula de "Diseñador" a la línea base de "Miguel Martínez" */
   flex: none;
   color: #021232;
 }
