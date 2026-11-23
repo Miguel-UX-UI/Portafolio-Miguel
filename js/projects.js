@@ -11,7 +11,8 @@
  */
 const PROJECTS = [
   {
-    client: "Suintec · Identidad visual",
+    client: "Suintec",
+    logo: "img/logos/suintec-blanco.svg",
     title: "Una marca sobria y precisa para el tratamiento de agua",
     image: "img/proyectos/suintec/portada-1800.jpg",
     color: "#2f4ff3",
