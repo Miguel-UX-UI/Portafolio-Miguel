@@ -11,10 +11,11 @@
  */
 const PROJECTS = [
   {
-    client: "Proyecto 01",
-    title: "Título corto del primer proyecto",
-    color: "#2f4858",
-    link: "#",
+    client: "Suintec · Identidad visual",
+    title: "Una marca que une suministro, ingeniería y tecnología",
+    image: "img/proyectos/suintec/portada-1800.jpg",
+    color: "#0f0ef6",
+    link: "suintec",
   },
   {
     client: "Proyecto 02",
