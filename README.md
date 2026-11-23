@@ -5,7 +5,8 @@ Sitio estático (HTML + CSS + JS, sin dependencias) listo para publicar en GitHu
 ## Estructura
 
 ```
-index.html          Página principal (Proyectos destacados)
+index.html          Inicio: "Hola, soy Miguel!" + proyectos destacados
+proyectos.html      Página de Proyectos
 css/styles.css      Estilos
 js/projects.js      ← Lista de proyectos (edita aquí títulos, imágenes y links)
 js/main.js          Render de tarjetas, animaciones y menú móvil

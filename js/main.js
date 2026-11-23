@@ -56,3 +56,27 @@ navMenu.querySelectorAll("a").forEach((a) =>
 );
 
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// Inicio: la foto se inclina siguiendo el cursor
+const heroPhoto = document.querySelector(".hero-photo");
+const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (heroPhoto && canHover && !reduceMotion) {
+  const img = heroPhoto.querySelector("img");
+  const hero = document.querySelector(".hero");
+  hero.addEventListener("pointermove", (e) => {
+    const r = heroPhoto.getBoundingClientRect();
+    const dx = (e.clientX - (r.left + r.width / 2)) / r.width;
+    const dy = (e.clientY - (r.top + r.height / 2)) / r.height;
+    const over = Math.abs(dx) < 0.5 && Math.abs(dy) < 0.5;
+    const k = over ? 1 : 0.35; // más intenso cuando el cursor está sobre la foto
+    const rx = Math.max(-1, Math.min(1, -dy)) * 14 * k;
+    const ry = Math.max(-1, Math.min(1, dx)) * 18 * k;
+    heroPhoto.classList.add("is-tilting");
+    img.style.transform = `rotate(${over ? 0 : -6}deg) rotateX(${rx}deg) rotateY(${ry}deg) scale(${over ? 1.08 : 1})`;
+  });
+  hero.addEventListener("pointerleave", () => {
+    heroPhoto.classList.remove("is-tilting");
+    img.style.transform = "";
+  });
+}

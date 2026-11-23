@@ -115,6 +115,87 @@ img { max-width: 100%; display: block; }
   letter-spacing: -6px;
 }
 
+/* ===== Hero inicio: "Hola, soy Miguel!" ===== */
+.hero {
+  width: min(var(--max), 100% - 20px);
+  margin: 0 auto;
+  padding: 80px 0 120px;
+  text-align: center;
+}
+.hero-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px 40px;
+  margin: 0;
+  font-size: 128px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -.06em;
+}
+.hero-word { display: inline-block; }
+.hero-photo {
+  display: block;
+  flex: none;
+  width: 200px;
+  perspective: 800px;
+}
+.hero-photo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 22%;
+  border-radius: var(--radius);
+  box-shadow: 0 24px 48px -20px rgba(0, 0, 0, .35);
+  transform: rotate(-6deg);
+  transition: transform .6s cubic-bezier(.2, .8, .2, 1), box-shadow .6s;
+  will-change: transform;
+}
+.hero-photo.is-tilting img { transition: transform .12s ease-out, box-shadow .6s; }
+.hero-lead {
+  max-width: 620px;
+  margin: 48px auto 0;
+  color: var(--muted);
+  font-size: 24px;
+  line-height: 1.4;
+  letter-spacing: -.02em;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 52px;
+  margin-top: 36px;
+  padding: 0 28px;
+  border-radius: 180px;
+  background: #000;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color .4s, transform .4s;
+}
+.hero-cta svg { width: 20px; height: 20px; }
+.hero-cta:hover { background: #333; transform: scale(1.04); }
+.hero-cta:focus-visible { outline: 2px solid #000; outline-offset: 3px; }
+#proyectos { scroll-margin-top: 24px; }
+
+@media (max-width: 991px) {
+  .hero { padding: 56px 0 96px; }
+  .hero-title { font-size: 88px; gap: 8px 28px; }
+  .hero-photo { width: 150px; }
+}
+@media (max-width: 767px) {
+  .hero { padding: 40px 0 72px; }
+  .hero-title { flex-direction: column; font-size: 60px; gap: 20px; }
+  .hero-photo { width: 160px; order: -1; }
+  .hero-lead { margin-top: 28px; font-size: 19px; padding: 0 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-photo img, .hero-photo.is-tilting img { transition: none; }
+}
+
 /* ===== Proyectos destacados ===== */
 .featured-work { width: min(var(--max), 100% - 20px); margin: 0 auto; padding-top: 40px; }
 
