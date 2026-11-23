@@ -724,6 +724,77 @@ body.case-page .menu-button span { background: #fff; }
 .case-credit { margin: 0 0 40px; color: var(--muted); font-size: 14px; text-align: right; }
 .case-credit a { text-decoration: underline; }
 
+/* ===== Caso Finnta: colores propios sobre la misma estructura ===== */
+.case-finnta .case-dark,
+.case-finnta .case-hero { background: #00203f; color: #fff; }
+.case-finnta .case-hero::after {
+  background:
+    linear-gradient(180deg, rgba(0, 32, 63, .5) 0%, rgba(0, 32, 63, 0) 22%, rgba(0, 32, 63, .2) 55%, rgba(0, 32, 63, .85) 82%, #00203f 100%),
+    linear-gradient(35deg, rgba(0, 32, 63, .7), rgba(0, 32, 63, 0) 60%);
+}
+.case-finnta .case-hero-logo { width: 248px; height: 80px; }
+.case-finnta .case-dark .case-meta { border-color: rgba(237, 237, 254, .15); }
+.case-finnta .case-dark .case-meta-label { color: rgba(237, 237, 254, .55); }
+.case-finnta .case-dark .case-lead strong { color: #aca3f9; }
+.case-finnta .case-dark .case-columns p { color: rgba(237, 237, 254, .75); }
+.case-finnta .case-lead strong { color: #7178ff; }
+.case-finnta .traits li { background: #ededfe; color: #00203f; }
+.case-finnta .traits li:nth-child(2) { background: #aca3f9; color: #00203f; }
+.case-finnta .traits li:nth-child(3) { background: #7178ff; color: #fff; }
+
+.case-split-media--video { aspect-ratio: 16 / 9; }
+.case-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: #00203f;
+}
+.case-gallery--wide picture { aspect-ratio: 16 / 9; }
+
+.case-finnta .logo-tile { min-width: 0; }
+.case-finnta .logo-tile.is-dark { background: #00203f; }
+.case-finnta .logo-tile.is-nube { background: #ededfe; box-shadow: none; }
+.case-finnta .logo-tile.is-purpura { background: #aca3f9; box-shadow: none; }
+.case-finnta .logo-tile.is-purpura figcaption { color: rgba(0, 32, 63, .7); }
+.case-finnta .logo-tile.is-dark figcaption { color: rgba(237, 237, 254, .7); }
+.case-finnta .logo-tile-svg { width: 48%; aspect-ratio: 1370 / 442; }
+.case-finnta .logo-symbol-svg { height: 44%; aspect-ratio: 1; }
+.logo-noche { color: #00203f; }
+.logo-purpura { color: #aca3f9; }
+.logo-blanco { color: #fff; }
+.app-icon {
+  display: grid;
+  place-items: center;
+  width: 29%;
+  aspect-ratio: 1;
+  border-radius: 22%;
+  background: linear-gradient(160deg, #0d3a66, #00203f 60%, #00162c);
+  box-shadow: 0 0 0 1px rgba(237, 237, 254, .12), 0 18px 40px rgba(0, 0, 0, .35);
+}
+.app-icon-svg { width: 62%; aspect-ratio: 1; color: #aca3f9; }
+.case-finnta .case-signoff-logo { width: min(360px, 60%); aspect-ratio: 1370 / 442; color: #00203f; }
+
+.case-finnta .swatch { color: #fff; }
+.case-finnta .swatch.is-light { color: #00203f; }
+.color-roles {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  color: #333;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.color-roles strong { display: block; color: #00203f; font-weight: 600; }
+.case-finnta .type-specimen { background: #00203f; color: #fff; font-family: "Instrument Sans", var(--font); }
+.case-finnta .type-name { letter-spacing: -3px; }
+.case-finnta .type-weights li { border-color: rgba(237, 237, 254, .2); }
+
 /* ===== Animación de aparición ===== */
 .reveal,
 .case-study {
@@ -836,4 +907,20 @@ body.case-page .menu-button span { background: #fff; }
   .case-signoff { padding: 56px 0; }
   .case-next { justify-content: flex-start; }
   .case-credit { text-align: left; }
+}
+
+/* Caso Finnta: ajustes responsive */
+@media (max-width: 991px) {
+  .case-finnta .case-hero-logo { width: 198px; height: 64px; }
+  .color-roles { grid-template-columns: repeat(3, 1fr); }
+  .case-finnta .type-name { font-size: 76px; }
+}
+@media (max-width: 767px) {
+  .case-finnta .case-hero-logo { width: 143px; height: 46px; }
+  .case-split-media--video { aspect-ratio: 16 / 9; }
+  .case-gallery--wide picture { aspect-ratio: 16 / 9; }
+  .case-finnta .case-figure--wide picture { aspect-ratio: 16 / 9; }
+  .case-finnta .case-hero-img { object-position: 68% center; }
+  .color-roles { grid-template-columns: 1fr; gap: 10px; }
+  .case-finnta .type-name { font-size: 44px; letter-spacing: -1.5px; }
 }
