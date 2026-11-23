@@ -12,9 +12,9 @@
 const PROJECTS = [
   {
     client: "Suintec · Identidad visual",
-    title: "Una marca que une suministro, ingeniería y tecnología",
+    title: "Una marca sobria y precisa para el tratamiento de agua",
     image: "img/proyectos/suintec/portada-1800.jpg",
-    color: "#0f0ef6",
+    color: "#2f4ff3",
     link: "suintec",
   },
   {

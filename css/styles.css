@@ -493,7 +493,7 @@ body.dark .footer { background: #141414; }
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(35deg, rgba(5, 8, 40, .88) 10%, rgba(15, 14, 246, .35) 55%, rgba(15, 14, 246, 0) 85%);
+  background: linear-gradient(35deg, rgba(7, 16, 21, .9) 10%, rgba(47, 79, 243, .4) 55%, rgba(47, 79, 243, 0) 85%);
 }
 .case-hero-content {
   position: absolute;
@@ -504,7 +504,18 @@ body.dark .footer { background: #141414; }
   flex-direction: column;
   gap: 24px;
 }
-.case-eyebrow { margin: 0; font-size: 18px; font-weight: 600; letter-spacing: -.03em; opacity: .85; }
+.case-eyebrow {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -.02em;
+}
+.case svg { fill: currentColor; }
+.case-hero-logo { display: block; width: 210px; height: 46px; color: #fff; }
+.case-eyebrow-sep { width: 1px; height: 34px; background: rgba(255, 255, 255, .5); }
 .case-title {
   margin: 0;
   max-width: 900px;
@@ -540,7 +551,7 @@ body.dark .footer { background: #141414; }
   line-height: 1.15;
   letter-spacing: -2px;
 }
-.case-lead strong { color: #0f0ef6; font-weight: 500; }
+.case-lead strong { color: #2f4ff3; font-weight: 500; }
 
 .case-h2 {
   margin: 0 0 20px;
@@ -587,7 +598,57 @@ body.dark .footer { background: #141414; }
   align-items: center;
   padding: 80px 0;
 }
-.case-split-media { display: block; aspect-ratio: 1; }
+.case-split-media { display: block; aspect-ratio: 1; margin: 0; }
+.case-split-media picture { display: block; height: 100%; }
+.case-construction img { background: #fff; box-shadow: inset 0 0 0 1px #e6e6e6; }
+
+/* Personalidad */
+.case-traits { padding: 0 0 80px; }
+.traits {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.traits li {
+  padding: 48px 32px;
+  border-radius: var(--radius);
+  background: #071015;
+  color: #e6fff2;
+  font-size: 48px;
+  font-weight: 500;
+  letter-spacing: -2px;
+}
+.traits li:nth-child(2) { background: #2f4ff3; }
+.traits li:nth-child(3) { background: linear-gradient(135deg, #5aacfe, #2f4ff3 55%, #071015); }
+
+/* Logotipo */
+.logo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; }
+.logo-tile {
+  margin: 0;
+  position: relative;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: inset 0 0 0 1px #e1e1e1;
+}
+.logo-tile.is-dark { background: #071015; box-shadow: none; }
+.logo-tile.is-gradient { background: linear-gradient(135deg, #5aacfe, #2f4ff3 50%, #071015); box-shadow: none; }
+.logo-tile figcaption { position: absolute; left: 24px; bottom: 20px; color: var(--muted); font-size: 14px; }
+.logo-tile.is-dark figcaption,
+.logo-tile.is-gradient figcaption { color: rgba(230, 255, 242, .7); }
+.logo-tile-svg { width: 56%; aspect-ratio: 783 / 171.3; }
+.logo-symbol-svg { height: 42%; aspect-ratio: 143.1 / 171.3; }
+.logo-azul { color: #2f4ff3; }
+.logo-negro { color: #071015; }
+.logo-claro { color: #e6fff2; }
+
+.case-signoff { display: grid; place-items: center; padding: 80px 0; }
+.case-signoff-logo { width: min(420px, 70%); aspect-ratio: 783 / 171.3; color: #2f4ff3; }
 
 .case-block { padding: 80px 0 40px; border-top: 1px solid #d9d9d9; }
 
@@ -596,7 +657,7 @@ body.dark .footer { background: #141414; }
   margin: 40px 0 16px;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 16px;
 }
 .swatch {
@@ -616,21 +677,25 @@ body.dark .footer { background: #141414; }
 .gradient-bar {
   height: 120px;
   border-radius: var(--radius);
-  background: linear-gradient(110deg, #61aff5 0%, #4252ed 40%, #252e52 75%, #222626 100%);
+  background: linear-gradient(110deg, #5aacfe 0%, #2f4ff3 45%, #071015 100%);
 }
 
 .type-specimen {
   display: flex;
+  justify-content: space-between;
   align-items: flex-end;
   gap: 60px;
   margin-top: 40px;
   padding: 60px;
   border-radius: var(--radius);
-  background: #0f0ef6;
-  color: #f6f6f6;
+  background: #071015;
+  color: #e6fff2;
+  font-family: "Zalando Sans", var(--font);
 }
-.type-big { margin: 0; font-size: 200px; font-weight: 500; line-height: .8; letter-spacing: -8px; }
-.type-line { margin: 0; font-size: 40px; line-height: 1.1; letter-spacing: -1.5px; }
+.type-name { margin: 0 0 40px; font-size: 120px; font-weight: 700; line-height: .95; letter-spacing: -4px; }
+.type-chars { margin: 0; font-size: 24px; line-height: 1.5; opacity: .85; }
+.type-weights { list-style: none; margin: 0; padding: 0; min-width: 260px; font-size: 28px; }
+.type-weights li { display: flex; justify-content: space-between; gap: 40px; padding: 10px 0; border-bottom: 1px solid rgba(230, 255, 242, .2); }
 
 .case-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding-bottom: 40px; }
 .case-gallery picture { display: block; aspect-ratio: 4 / 5; }
@@ -677,7 +742,9 @@ body.dark .footer { background: #141414; }
   .case-lead { font-size: 34px; letter-spacing: -1.2px; }
   .case-columns, .case-split { gap: 48px; }
   .palette { grid-template-columns: repeat(3, 1fr); }
-  .type-big { font-size: 140px; }
+  .traits li { font-size: 36px; padding: 36px 24px; }
+  .type-specimen { flex-direction: column; align-items: stretch; }
+  .type-name { font-size: 88px; }
 }
 
 @media (max-width: 767px) {
@@ -738,9 +805,19 @@ body.dark .footer { background: #141414; }
   .palette { grid-template-columns: 1fr 1fr; gap: 12px; }
   .swatch { aspect-ratio: 4 / 3; padding: 16px; }
   .gradient-bar { height: 80px; }
-  .type-specimen { flex-direction: column; align-items: flex-start; gap: 24px; padding: 32px 24px; }
-  .type-big { font-size: 110px; letter-spacing: -5px; }
-  .type-line { font-size: 30px; }
+  .type-specimen { gap: 32px; padding: 32px 24px; }
+  .type-name { font-size: 56px; letter-spacing: -2px; margin-bottom: 24px; }
+  .type-chars { font-size: 16px; }
+  .type-weights { min-width: 0; font-size: 22px; }
+  .traits { grid-template-columns: 1fr; gap: 12px; }
+  .traits li { font-size: 32px; padding: 28px 24px; }
+  .case-traits { padding-bottom: 56px; }
+  .logo-grid { grid-template-columns: 1fr; gap: 12px; }
+  .logo-tile figcaption { left: 16px; bottom: 12px; font-size: 13px; }
+  .case-hero-logo { width: 120px; height: 26px; }
+  .case-eyebrow { gap: 12px; }
+  .case-eyebrow-sep { height: 22px; }
+  .case-signoff { padding: 56px 0; }
   .case-next { justify-content: flex-start; }
   .case-credit { text-align: left; }
 }
