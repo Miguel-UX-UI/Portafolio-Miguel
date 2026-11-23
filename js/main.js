@@ -44,6 +44,21 @@ const observer = new IntersectionObserver(
 );
 document.querySelectorAll(".case-study, .reveal").forEach((el) => observer.observe(el));
 
+// Videos (en lugar de GIF): se cargan y reproducen solo cuando están en pantalla
+const lazyVideos = document.querySelectorAll("video[data-autoplay]");
+if (lazyVideos.length && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const videoObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) e.target.play().catch(() => {});
+        else e.target.pause();
+      });
+    },
+    { threshold: 0.25 }
+  );
+  lazyVideos.forEach((v) => videoObserver.observe(v));
+}
+
 // Menú móvil
 const menuButton = document.querySelector(".menu-button");
 const navMenu = document.querySelector(".nav-menu");

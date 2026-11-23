@@ -403,26 +403,6 @@ body.dark .menu-button span { background: #fff; }
 /* ===== Footer ===== */
 .footer-section { width: min(var(--max), 100% - 20px); margin: 0 auto; padding: 16px 0 24px; }
 
-.cta-red {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 16px;
-  padding: 32px;
-  border-radius: var(--radius);
-  background: var(--red);
-  color: #fff;
-  transition: background-color .4s;
-}
-.cta-red:hover { background: var(--red-dark); }
-.cta-red .heading { margin: 0; color: #fff; }
-.cta-arrow {
-  width: 64px;
-  height: 64px;
-  flex-shrink: 0;
-  transition: transform .4s;
-}
-.cta-red:hover .cta-arrow { transform: translateY(6px); }
 
 .footer {
   padding: 60px;
@@ -540,21 +520,21 @@ body.case-page .menu-button span { background: #fff; }
   margin: 0;
   display: flex;
   align-items: center;
-  gap: 16px;
-  font-size: 18px;
+  gap: 24px;
+  font-size: 24px;
   font-weight: 500;
   letter-spacing: -.02em;
 }
 .case svg { fill: currentColor; }
-.case-hero-logo { display: block; width: 210px; height: 46px; color: #fff; }
-.case-eyebrow-sep { width: 1px; height: 34px; background: rgba(255, 255, 255, .5); }
+.case-hero-logo { display: block; width: 300px; height: 66px; color: #fff; }
+.case-eyebrow-sep { width: 1px; height: 48px; background: rgba(255, 255, 255, .5); }
 .case-title {
   margin: 0;
-  max-width: 900px;
-  font-size: 80px;
+  max-width: 1150px;
+  font-size: 100px;
   font-weight: 500;
   line-height: 1.02;
-  letter-spacing: -4px;
+  letter-spacing: -6px;
 }
 
 .case-meta {
@@ -744,6 +724,77 @@ body.case-page .menu-button span { background: #fff; }
 .case-credit { margin: 0 0 40px; color: var(--muted); font-size: 14px; text-align: right; }
 .case-credit a { text-decoration: underline; }
 
+/* ===== Caso Finnta: colores propios sobre la misma estructura ===== */
+.case-finnta .case-dark,
+.case-finnta .case-hero { background: #00203f; color: #fff; }
+.case-finnta .case-hero::after {
+  background:
+    linear-gradient(180deg, rgba(0, 32, 63, .5) 0%, rgba(0, 32, 63, 0) 22%, rgba(0, 32, 63, .2) 55%, rgba(0, 32, 63, .85) 82%, #00203f 100%),
+    linear-gradient(35deg, rgba(0, 32, 63, .7), rgba(0, 32, 63, 0) 60%);
+}
+.case-finnta .case-hero-logo { width: 248px; height: 80px; }
+.case-finnta .case-dark .case-meta { border-color: rgba(237, 237, 254, .15); }
+.case-finnta .case-dark .case-meta-label { color: rgba(237, 237, 254, .55); }
+.case-finnta .case-dark .case-lead strong { color: #aca3f9; }
+.case-finnta .case-dark .case-columns p { color: rgba(237, 237, 254, .75); }
+.case-finnta .case-lead strong { color: #7178ff; }
+.case-finnta .traits li { background: #ededfe; color: #00203f; }
+.case-finnta .traits li:nth-child(2) { background: #aca3f9; color: #00203f; }
+.case-finnta .traits li:nth-child(3) { background: #7178ff; color: #fff; }
+
+.case-split-media--video { aspect-ratio: 16 / 9; }
+.case-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: #00203f;
+}
+.case-gallery--wide picture { aspect-ratio: 16 / 9; }
+
+.case-finnta .logo-tile { min-width: 0; }
+.case-finnta .logo-tile.is-dark { background: #00203f; }
+.case-finnta .logo-tile.is-nube { background: #ededfe; box-shadow: none; }
+.case-finnta .logo-tile.is-purpura { background: #aca3f9; box-shadow: none; }
+.case-finnta .logo-tile.is-purpura figcaption { color: rgba(0, 32, 63, .7); }
+.case-finnta .logo-tile.is-dark figcaption { color: rgba(237, 237, 254, .7); }
+.case-finnta .logo-tile-svg { width: 48%; aspect-ratio: 1370 / 442; }
+.case-finnta .logo-symbol-svg { height: 44%; aspect-ratio: 1; }
+.logo-noche { color: #00203f; }
+.logo-purpura { color: #aca3f9; }
+.logo-blanco { color: #fff; }
+.app-icon {
+  display: grid;
+  place-items: center;
+  width: 29%;
+  aspect-ratio: 1;
+  border-radius: 22%;
+  background: linear-gradient(160deg, #0d3a66, #00203f 60%, #00162c);
+  box-shadow: 0 0 0 1px rgba(237, 237, 254, .12), 0 18px 40px rgba(0, 0, 0, .35);
+}
+.app-icon-svg { width: 62%; aspect-ratio: 1; color: #aca3f9; }
+.case-finnta .case-signoff-logo { width: min(360px, 60%); aspect-ratio: 1370 / 442; color: #00203f; }
+
+.case-finnta .swatch { color: #fff; }
+.case-finnta .swatch.is-light { color: #00203f; }
+.color-roles {
+  list-style: none;
+  margin: 24px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  color: #333;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.color-roles strong { display: block; color: #00203f; font-weight: 600; }
+.case-finnta .type-specimen { background: #00203f; color: #fff; font-family: "Instrument Sans", var(--font); }
+.case-finnta .type-name { letter-spacing: -3px; }
+.case-finnta .type-weights li { border-color: rgba(237, 237, 254, .2); }
+
 /* ===== Animación de aparición ===== */
 .reveal,
 .case-study {
@@ -770,7 +821,10 @@ body.case-page .menu-button span { background: #fff; }
   .about-statement.section { margin-bottom: 64px; }
 
   .case-hero-content { padding-bottom: 56px; }
-  .case-title { font-size: 56px; letter-spacing: -2.5px; }
+  .case-title { font-size: 72px; letter-spacing: -4px; }
+  .case-hero-logo { width: 240px; height: 53px; }
+  .case-eyebrow { font-size: 20px; gap: 18px; }
+  .case-eyebrow-sep { height: 38px; }
   .case-meta { grid-template-columns: 1fr 1fr; }
   .case-lead { font-size: 34px; letter-spacing: -1.2px; }
   .case-columns, .case-split { gap: 48px; }
@@ -815,8 +869,6 @@ body.case-page .menu-button span { background: #fff; }
   .services { flex-direction: column; gap: 32px; }
   .about-block { margin-top: 90px; }
 
-  .cta-red { padding: 24px; }
-  .cta-arrow { width: 40px; height: 40px; }
   .footer { padding: 40px 24px; gap: 40px; }
   .footer-grid { grid-template-columns: 1fr; gap: 28px; }
 
@@ -825,8 +877,8 @@ body.case-page .menu-button span { background: #fff; }
   .case-dark { padding-bottom: 72px; }
   .case-dark + .case-figure--wide { margin-top: 48px; }
   body.case-page .nav-menu { background: #141414; }
-  .case-eyebrow { font-size: 15px; }
-  .case-title { font-size: 38px; letter-spacing: -1.5px; }
+  .case-eyebrow { font-size: 17px; }
+  .case-title { font-size: 46px; letter-spacing: -2.2px; }
   .case-meta { gap: 24px; padding: 32px 0; }
   .case-meta p { font-size: 16px; }
   .case-intro { padding: 64px 0 16px; }
@@ -849,10 +901,26 @@ body.case-page .menu-button span { background: #fff; }
   .traits li { font-size: 32px; padding: 28px 24px; }
   .logo-grid { grid-template-columns: 1fr; gap: 12px; }
   .logo-tile figcaption { left: 16px; bottom: 12px; font-size: 13px; }
-  .case-hero-logo { width: 120px; height: 26px; }
-  .case-eyebrow { gap: 12px; }
-  .case-eyebrow-sep { height: 22px; }
+  .case-hero-logo { width: 170px; height: 37px; }
+  .case-eyebrow { gap: 14px; }
+  .case-eyebrow-sep { height: 28px; }
   .case-signoff { padding: 56px 0; }
   .case-next { justify-content: flex-start; }
   .case-credit { text-align: left; }
+}
+
+/* Caso Finnta: ajustes responsive */
+@media (max-width: 991px) {
+  .case-finnta .case-hero-logo { width: 198px; height: 64px; }
+  .color-roles { grid-template-columns: repeat(3, 1fr); }
+  .case-finnta .type-name { font-size: 76px; }
+}
+@media (max-width: 767px) {
+  .case-finnta .case-hero-logo { width: 143px; height: 46px; }
+  .case-split-media--video { aspect-ratio: 16 / 9; }
+  .case-gallery--wide picture { aspect-ratio: 16 / 9; }
+  .case-finnta .case-figure--wide picture { aspect-ratio: 16 / 9; }
+  .case-finnta .case-hero-img { object-position: 68% center; }
+  .color-roles { grid-template-columns: 1fr; gap: 10px; }
+  .case-finnta .type-name { font-size: 44px; letter-spacing: -1.5px; }
 }

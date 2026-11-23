@@ -19,10 +19,12 @@ const PROJECTS = [
     link: "suintec",
   },
   {
-    client: "Proyecto 02",
-    title: "Una frase que resuma el impacto",
-    color: "#5b3a29",
-    link: "",
+    client: "Finnta",
+    logo: "img/logos/finnta-blanco.svg",
+    title: "Una marca que guía a invertir con confianza",
+    image: "img/proyectos/finnta/portada-1920.jpg",
+    color: "#00203f",
+    link: "finnta",
   },
   {
     client: "Proyecto 03",
