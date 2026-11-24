@@ -133,7 +133,7 @@ img { max-width: 100%; display: block; }
   justify-content: flex-start;
   gap: 8px 40px;
   margin: 0;
-  font-size: 128px;
+  font-size: 96px;
   font-weight: 500;
   line-height: 1;
   letter-spacing: -.06em;
@@ -143,7 +143,7 @@ img { max-width: 100%; display: block; }
 .hero-photo {
   display: block;
   flex: none;
-  width: 200px;
+  width: 160px;
   perspective: 800px;
 }
 .hero-photo img {
@@ -163,7 +163,7 @@ img { max-width: 100%; display: block; }
 .hero-sub {
   grid-column: 1;
   margin: 24px 0 0;
-  font-size: 128px;
+  font-size: 96px;
   font-weight: 500;
   line-height: 1;
   letter-spacing: -.06em;
@@ -227,17 +227,17 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 991px) {
   .hero { padding: 56px 0 96px; }
-  .hero-title { font-size: 88px; gap: 8px 28px; }
-  .hero-photo { width: 150px; }
+  .hero-title { font-size: 72px; gap: 8px 24px; }
+  .hero-photo { width: 124px; }
   .hero { grid-template-columns: minmax(0, 1fr); }
-  .hero-sub { font-size: 88px; margin-top: 16px; }
+  .hero-sub { font-size: 72px; margin-top: 16px; }
   .hero-aside { grid-column: 1; margin-top: 40px; padding-bottom: 0; }
 }
 @media (max-width: 767px) {
   .hero { padding: 40px 0 72px; }
-  .hero-title { flex-direction: column; align-items: flex-start; font-size: 60px; gap: 12px; }
-  .hero-photo { width: 140px; order: -1; margin: 0 0 8px 8px; }
-  .hero-sub { font-size: 60px; margin-top: 12px; }
+  .hero-title { flex-direction: column; align-items: flex-start; font-size: 48px; gap: 12px; }
+  .hero-photo { width: 120px; order: -1; margin: 0 0 8px 8px; }
+  .hero-sub { font-size: 48px; margin-top: 12px; }
   .hero-aside { margin-top: 28px; }
   .hero-lead { font-size: 19px; }
 }
