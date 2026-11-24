@@ -6,9 +6,10 @@ if (container && typeof PROJECTS !== "undefined") PROJECTS.forEach((p) => {
   card.className = "case-study";
 
   const bg = p.image
-    ? `linear-gradient(35deg, rgba(0,0,0,.66), rgba(0,0,0,0) 70%), url("${p.image}") center / cover no-repeat`
+    ? `linear-gradient(35deg, rgba(0,0,0,.66), rgba(0,0,0,0) 70%), url("${p.image}") var(--bg-pos, center) / cover no-repeat`
     : `linear-gradient(35deg, rgba(0,0,0,.55), rgba(0,0,0,0) 70%), ${p.color || "#444"}`;
   card.style.background = bg;
+  if (p.imagePositionMobile) card.style.setProperty("--bg-pos-m", p.imagePositionMobile);
 
   const brand = p.logo
     ? `<img class="case-study-logo" src="${p.logo}" alt="${p.client}" loading="lazy"${p.logoWidth ? ` style="--logo-w: ${p.logoWidth}px"` : ""} />`

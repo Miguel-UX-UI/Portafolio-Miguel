@@ -8,6 +8,7 @@
  *  title  : frase corta que describe el proyecto
  *  image  : (opcional) imagen de fondo, ej. "img/proyectos/proyecto-1.jpg"
  *  video  : (opcional) video de fondo en bucle, ej. { mp4: "...mp4", webm: "...webm", poster: "...jpg" }
+ *  imagePositionMobile : (opcional) parte de la imagen que se ve en celular, ej. "30% center"
  *  color  : color de fondo mientras no haya imagen
  *  link   : URL del caso de estudio. Si está vacío, el botón muestra "Próximamente".
  */
@@ -26,7 +27,8 @@ const PROJECTS = [
     logo: "img/logos/finnta-blanco.svg",
     logoWidth: 248,
     title: "Una marca que guía a invertir con confianza",
-    image: "img/proyectos/finnta/portada-1920.jpg",
+    image: "img/proyectos/finnta/tarjeta-1920.jpg",
+    imagePositionMobile: "24% center",
     color: "#00203f",
     link: "finnta",
   },
