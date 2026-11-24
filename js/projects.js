@@ -8,6 +8,7 @@
  *  title  : frase corta que describe el proyecto
  *  image  : (opcional) imagen de fondo, ej. "img/proyectos/proyecto-1.jpg"
  *  imagePositionMobile : (opcional) parte de la imagen que se ve en celular, ej. "30% center"
+ *  video  : (opcional) video de fondo en bucle, ej. { mp4: "...mp4", webm: "...webm", poster: "...jpg" }
  *  color  : color de fondo mientras no haya imagen
  *  link   : URL del caso de estudio. Si está vacío, el botón muestra "Próximamente".
  */
@@ -32,15 +33,25 @@ const PROJECTS = [
     link: "finnta",
   },
   {
-    client: "Proyecto 03",
-    title: "Otro proyecto que quieras mostrar",
-    color: "#1f3b2d",
+    client: "Discord",
+    logo: "img/logos/discord-blanco.svg",
+    logoWidth: 240,
+    title: "Bienvenida animada para la comunidad Discord Colombia",
+    video: {
+      webm: "img/proyectos/discord/portada.webm",
+      mp4: "img/proyectos/discord/portada.mp4",
+      poster: "img/proyectos/discord/portada-poster.jpg",
+    },
+    color: "#5865f2",
     link: "",
   },
   {
-    client: "Proyecto 04",
+    client: "Bits",
+    logo: "img/logos/bits-blanco.svg",
+    logoWidth: 170,
     title: "Redefiniendo un proceso clave",
-    color: "#3a2f58",
+    image: "img/proyectos/bits/portada-1800.jpg",
+    color: "#1b1d2a",
     link: "",
   },
   {
