@@ -46,10 +46,11 @@ img { max-width: 100%; display: block; }
 
 .brand-mark {
   display: block;
-  width: 63px;
-  height: 29px; /* alto de la mayúscula de "Diseñador" a la línea base de "Miguel Martínez" */
+  width: 56px;
+  height: 40px; /* logotipo orgánico (proporción 1261 × 905) */
   flex: none;
-  color: #021232;
+  overflow: visible;
+  color: #000; /* mismo color que "Miguel Martínez" */
 }
 
 .brand-name { display: flex; flex-direction: column; gap: 2px; }
@@ -120,25 +121,30 @@ img { max-width: 100%; display: block; }
   width: min(var(--max), 100% - 20px);
   margin: 0 auto;
   padding: 80px 0 120px;
-  text-align: center;
+  text-align: left;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+  column-gap: 64px;
+  align-items: end;
 }
 .hero-title {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 8px 40px;
   margin: 0;
-  font-size: 128px;
+  font-size: 96px;
   font-weight: 500;
   line-height: 1;
   letter-spacing: -.06em;
+  grid-column: 1 / -1;
 }
 .hero-word { display: inline-block; }
 .hero-photo {
   display: block;
   flex: none;
-  width: 200px;
+  width: 160px;
   perspective: 800px;
 }
 .hero-photo img {
@@ -154,9 +160,22 @@ img { max-width: 100%; display: block; }
   will-change: transform;
 }
 .hero-photo.is-tilting img { transition: transform .12s ease-out, box-shadow .6s; }
+/* Segunda línea del título: mismo tamaño y grosor que "Hola, soy Miguel!" */
+.hero-sub {
+  grid-column: 1;
+  margin: 24px 0 0;
+  font-size: 96px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -.06em;
+}
+.hero-aside { grid-column: 2; padding-bottom: 10px; }
+.hero-sub-word { display: inline-block; vertical-align: top; }
+.hero-sub .hero-char { vertical-align: top; }
+.hero-intro .hero-sub-word { overflow: hidden; padding-bottom: .16em; margin-bottom: -.16em; }
 .hero-lead {
   max-width: 620px;
-  margin: 48px auto 0;
+  margin: 0;
   color: var(--muted);
   font-size: 24px;
   line-height: 1.4;
@@ -195,13 +214,13 @@ img { max-width: 100%; display: block; }
   animation-delay: calc(.15s + var(--i) * .045s);
 }
 .hero-intro .hero-lead,
-.hero-intro .hero-cta {
+.hero-intro .hero .hero-cta {
   opacity: 0;
   transform: translateY(16px);
   animation: hero-fade-up .8s cubic-bezier(.2, .8, .2, 1) forwards;
-  animation-delay: 1s;
+  animation-delay: 1.5s;
 }
-.hero-intro .hero-cta { animation-delay: 1.12s; }
+.hero-intro .hero .hero-cta { animation-delay: 1.62s; }
 @keyframes hero-char-in { to { opacity: 1; transform: none; } }
 @keyframes hero-photo-in { to { opacity: 1; transform: none; } }
 @keyframes hero-fade-up { to { opacity: 1; transform: none; } }
@@ -209,14 +228,19 @@ img { max-width: 100%; display: block; }
 
 @media (max-width: 991px) {
   .hero { padding: 56px 0 96px; }
-  .hero-title { font-size: 88px; gap: 8px 28px; }
-  .hero-photo { width: 150px; }
+  .hero-title { font-size: 72px; gap: 8px 24px; }
+  .hero-photo { width: 124px; }
+  .hero { grid-template-columns: minmax(0, 1fr); }
+  .hero-sub { font-size: 72px; margin-top: 16px; }
+  .hero-aside { grid-column: 1; margin-top: 40px; padding-bottom: 0; }
 }
 @media (max-width: 767px) {
   .hero { padding: 40px 0 72px; }
-  .hero-title { flex-direction: column; font-size: 60px; gap: 20px; }
-  .hero-photo { width: 160px; order: -1; }
-  .hero-lead { margin-top: 28px; font-size: 19px; padding: 0 8px; }
+  .hero-title { flex-direction: column; align-items: flex-start; font-size: 48px; gap: 12px; }
+  .hero-photo { width: 120px; order: -1; margin: 0 0 8px 8px; }
+  .hero-sub { font-size: 48px; margin-top: 12px; }
+  .hero-aside { margin-top: 28px; }
+  .hero-lead { font-size: 19px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-photo img, .hero-photo.is-tilting img { transition: none; }
@@ -293,7 +317,7 @@ img { max-width: 100%; display: block; }
   .clients-text { padding: 0 8px; }
   .clients-title { font-size: 40px; }
   .clients-lead { margin-top: 16px; font-size: 18px; }
-  .clients-text .hero-cta { margin-top: 24px; }
+  .clients-text .hero-cta { display: flex; width: fit-content; margin: 24px auto 0; }
   .clients-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
   .clients-tile img { height: calc(var(--h, 40px) * .75); }
 }
@@ -376,7 +400,7 @@ a.case-study-button:hover { transform: scale(1.04); }
 
 /* ===== Tema oscuro (Sobre mí) ===== */
 body.dark { background: #000; color: #fff; }
-body.dark .brand-mark { color: #fff; }
+body.dark .brand-mark, body.dark .brand-title { color: #fff; }
 body.dark .brand-role { color: #8a8a8a; }
 body.dark .brand-title { color: #fff; }
 body.dark .nav-link { color: #9a9a9a; }
@@ -1058,7 +1082,17 @@ body.case-page .menu-button span { background: #fff; }
   .case-eyebrow { gap: 14px; }
   .case-eyebrow-sep { height: 28px; }
   .case-signoff { padding: 56px 0; }
-  .case-next { justify-content: flex-start; }
+  .case-next { justify-content: center; flex-wrap: nowrap; gap: 10px; }
+  .case-next .pill { height: 50px; padding: 0 22px; font-size: 16px; white-space: nowrap; }
+  .case-next .pill:has(.pill-label) { width: 50px; padding: 0; flex: none; }
+  .case-next .pill-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
   .case-credit { text-align: left; }
 }
 
