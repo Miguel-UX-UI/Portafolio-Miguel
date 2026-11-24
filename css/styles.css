@@ -468,6 +468,9 @@ body.dark .menu-button span { background: #fff; }
   transition: background-color .4s, transform .4s;
 }
 .pill:hover { transform: scale(1.04); }
+.pill:has(.pill-icon) { gap: 10px; padding: 0 32px; }
+.pill-icon { width: 20px; height: 20px; flex: none; }
+.case .pill-icon[fill="none"] { fill: none; }
 .pill.red { background: var(--red); }
 .pill.red:hover { background: var(--red-dark); }
 
