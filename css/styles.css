@@ -120,13 +120,13 @@ img { max-width: 100%; display: block; }
   width: min(var(--max), 100% - 20px);
   margin: 0 auto;
   padding: 80px 0 120px;
-  text-align: center;
+  text-align: left;
 }
 .hero-title {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 8px 40px;
   margin: 0;
   font-size: 128px;
@@ -154,9 +154,20 @@ img { max-width: 100%; display: block; }
   will-change: transform;
 }
 .hero-photo.is-tilting img { transition: transform .12s ease-out, box-shadow .6s; }
+.hero-sub {
+  display: block;
+  flex-basis: 100%;
+  max-width: 1100px;
+  margin-top: 28px;
+  font-size: 64px;
+  line-height: 1.08;
+  letter-spacing: -.045em;
+}
+.hero-sub-word { display: inline-block; }
+.hero-intro .hero-sub-word { overflow: hidden; padding-bottom: .16em; margin-bottom: -.16em; }
 .hero-lead {
   max-width: 620px;
-  margin: 48px auto 0;
+  margin: 40px 0 0;
   color: var(--muted);
   font-size: 24px;
   line-height: 1.4;
@@ -199,9 +210,9 @@ img { max-width: 100%; display: block; }
   opacity: 0;
   transform: translateY(16px);
   animation: hero-fade-up .8s cubic-bezier(.2, .8, .2, 1) forwards;
-  animation-delay: 1s;
+  animation-delay: 1.5s;
 }
-.hero-intro .hero .hero-cta { animation-delay: 1.12s; }
+.hero-intro .hero .hero-cta { animation-delay: 1.62s; }
 @keyframes hero-char-in { to { opacity: 1; transform: none; } }
 @keyframes hero-photo-in { to { opacity: 1; transform: none; } }
 @keyframes hero-fade-up { to { opacity: 1; transform: none; } }
@@ -211,12 +222,14 @@ img { max-width: 100%; display: block; }
   .hero { padding: 56px 0 96px; }
   .hero-title { font-size: 88px; gap: 8px 28px; }
   .hero-photo { width: 150px; }
+  .hero-sub { font-size: 44px; margin-top: 20px; }
 }
 @media (max-width: 767px) {
   .hero { padding: 40px 0 72px; }
-  .hero-title { flex-direction: column; font-size: 60px; gap: 20px; }
-  .hero-photo { width: 160px; order: -1; }
-  .hero-lead { margin-top: 28px; font-size: 19px; padding: 0 8px; }
+  .hero-title { flex-direction: column; align-items: flex-start; font-size: 60px; gap: 12px; }
+  .hero-photo { width: 140px; order: -1; margin: 0 0 8px 8px; }
+  .hero-sub { font-size: 30px; margin-top: 12px; letter-spacing: -.035em; }
+  .hero-lead { margin-top: 24px; font-size: 19px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-photo img, .hero-photo.is-tilting img { transition: none; }
