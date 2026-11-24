@@ -49,7 +49,8 @@ img { max-width: 100%; display: block; }
   width: 56px;
   height: 40px; /* logotipo orgánico (proporción 1261 × 905) */
   flex: none;
-  color: #000;
+  overflow: visible;
+  color: #000; /* mismo color que "Miguel Martínez" */
 }
 
 .brand-name { display: flex; flex-direction: column; gap: 2px; }
@@ -399,7 +400,7 @@ a.case-study-button:hover { transform: scale(1.04); }
 
 /* ===== Tema oscuro (Sobre mí) ===== */
 body.dark { background: #000; color: #fff; }
-body.dark .brand-mark { color: #fff; }
+body.dark .brand-mark, body.dark .brand-title { color: #fff; }
 body.dark .brand-role { color: #8a8a8a; }
 body.dark .brand-title { color: #fff; }
 body.dark .nav-link { color: #9a9a9a; }
