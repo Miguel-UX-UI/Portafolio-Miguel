@@ -11,7 +11,7 @@ if (container && typeof PROJECTS !== "undefined") PROJECTS.forEach((p) => {
   card.style.background = bg;
 
   const brand = p.logo
-    ? `<img class="case-study-logo" src="${p.logo}" alt="${p.client}" loading="lazy" />`
+    ? `<img class="case-study-logo" src="${p.logo}" alt="${p.client}" loading="lazy"${p.logoWidth ? ` style="--logo-w: ${p.logoWidth}px"` : ""} />`
     : `<span class="case-study-client">${p.client}</span>`;
 
   const button = p.link

@@ -4,6 +4,7 @@
  *
  *  client : nombre de la empresa/cliente (se muestra arriba del título)
  *  logo   : (opcional) ruta a un logo, ej. "img/logos/empresa.svg". Si existe, reemplaza al texto "client".
+ *  logoWidth : (opcional) ancho del logo en px en escritorio (mismo tamaño que en la portada del caso).
  *  title  : frase corta que describe el proyecto
  *  image  : (opcional) imagen de fondo, ej. "img/proyectos/proyecto-1.jpg"
  *  color  : color de fondo mientras no haya imagen
@@ -13,6 +14,7 @@ const PROJECTS = [
   {
     client: "Suintec",
     logo: "img/logos/suintec-blanco.svg",
+    logoWidth: 300,
     title: "Una marca sobria y precisa para el tratamiento de agua",
     image: "img/proyectos/suintec/portada-1800.jpg",
     color: "#2f4ff3",
@@ -21,6 +23,7 @@ const PROJECTS = [
   {
     client: "Finnta",
     logo: "img/logos/finnta-blanco.svg",
+    logoWidth: 248,
     title: "Una marca que guía a invertir con confianza",
     image: "img/proyectos/finnta/portada-1920.jpg",
     color: "#00203f",
