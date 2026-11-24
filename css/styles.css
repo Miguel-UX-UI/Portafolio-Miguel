@@ -46,10 +46,10 @@ img { max-width: 100%; display: block; }
 
 .brand-mark {
   display: block;
-  width: 63px;
-  height: 29px; /* alto de la mayúscula de "Diseñador" a la línea base de "Miguel Martínez" */
+  width: 56px;
+  height: 40px; /* logotipo orgánico (proporción 1261 × 905) */
   flex: none;
-  color: #021232;
+  color: #000;
 }
 
 .brand-name { display: flex; flex-direction: column; gap: 2px; }
