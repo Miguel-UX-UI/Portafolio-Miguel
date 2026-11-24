@@ -7,6 +7,7 @@
  *  logoWidth : (opcional) ancho del logo en px en escritorio (mismo tamaño que en la portada del caso).
  *  title  : frase corta que describe el proyecto
  *  image  : (opcional) imagen de fondo, ej. "img/proyectos/proyecto-1.jpg"
+ *  imagePositionMobile : (opcional) parte de la imagen que se ve en celular, ej. "30% center"
  *  video  : (opcional) video de fondo en bucle, ej. { mp4: "...mp4", webm: "...webm", poster: "...jpg" }
  *  imagePositionMobile : (opcional) parte de la imagen que se ve en celular, ej. "30% center"
  *  color  : color de fondo mientras no haya imagen
