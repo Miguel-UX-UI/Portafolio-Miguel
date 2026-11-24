@@ -8,11 +8,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styles.css?v=19" />
+  <link rel="stylesheet" href="css/styles.css?v=20" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32" />
   <link rel="icon" href="favicon-16.png" type="image/png" sizes="16x16" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <script>
+    /* Animación de entrada del hero: solo en la primera visita */
+    try {
+      if (!localStorage.getItem("heroIntroVisto") && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.classList.add("hero-intro");
+        localStorage.setItem("heroIntroVisto", "1");
+      }
+    } catch (e) {}
+  </script>
 </head>
 <body>
 
@@ -39,12 +48,12 @@
 
   <!-- ===== Hero: Hola, soy Miguel! ===== -->
   <section class="hero" aria-labelledby="hero-title">
-    <h1 id="hero-title" class="hero-title">
-      <span class="hero-word">Hola,</span>
-      <span class="hero-photo" aria-hidden="true">
+    <h1 id="hero-title" class="hero-title" aria-label="Hola, soy Miguel!">
+      <span class="hero-word" aria-hidden="true"><span class="hero-char" style="--i:0">H</span><span class="hero-char" style="--i:1">o</span><span class="hero-char" style="--i:2">l</span><span class="hero-char" style="--i:3">a</span><span class="hero-char" style="--i:4">,</span></span>
+      <span class="hero-photo" aria-hidden="true" style="--i:6">
         <img src="img/Imagenes/retrato-miguel.jpg" alt="" width="941" height="1672" fetchpriority="high" />
       </span>
-      <span class="hero-word">soy Miguel!</span>
+      <span class="hero-word" aria-hidden="true"><span class="hero-char" style="--i:7">s</span><span class="hero-char" style="--i:8">o</span><span class="hero-char" style="--i:9">y</span> <span class="hero-char" style="--i:10">M</span><span class="hero-char" style="--i:11">i</span><span class="hero-char" style="--i:12">g</span><span class="hero-char" style="--i:13">u</span><span class="hero-char" style="--i:14">e</span><span class="hero-char" style="--i:15">l</span><span class="hero-char" style="--i:16">!</span></span>
     </h1>
     <p class="hero-lead">Diseñador de experiencias. Transformo requerimientos de negocio en interfaces claras, funcionales y escalables.</p>
     <a href="#proyectos" class="hero-cta">

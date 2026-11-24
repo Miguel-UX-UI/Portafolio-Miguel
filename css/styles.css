@@ -144,9 +144,9 @@ img { max-width: 100%; display: block; }
 .hero-photo img {
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
-  object-position: center 22%;
+  object-position: center 18%;
   border-radius: var(--radius);
   box-shadow: 0 24px 48px -20px rgba(0, 0, 0, .35);
   transform: rotate(-6deg);
@@ -179,6 +179,32 @@ img { max-width: 100%; display: block; }
 .hero-cta svg { width: 20px; height: 20px; }
 .hero-cta:hover { background: #333; transform: scale(1.04); }
 .hero-cta:focus-visible { outline: 2px solid #000; outline-offset: 3px; }
+/* Entrada del hero (solo primera visita; la clase la pone un script en <head>) */
+.hero-char { display: inline-block; }
+.hero-intro .hero-word { overflow: hidden; padding-bottom: .16em; margin-bottom: -.16em; }
+.hero-intro .hero-char {
+  opacity: 0;
+  transform: translateY(105%);
+  animation: hero-char-in .9s cubic-bezier(.2, .8, .2, 1) forwards;
+  animation-delay: calc(.15s + var(--i) * .045s);
+}
+.hero-intro .hero-photo {
+  opacity: 0;
+  transform: scale(.6) rotate(10deg);
+  animation: hero-photo-in 1s cubic-bezier(.2, .9, .25, 1.15) forwards;
+  animation-delay: calc(.15s + var(--i) * .045s);
+}
+.hero-intro .hero-lead,
+.hero-intro .hero-cta {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: hero-fade-up .8s cubic-bezier(.2, .8, .2, 1) forwards;
+  animation-delay: 1s;
+}
+.hero-intro .hero-cta { animation-delay: 1.12s; }
+@keyframes hero-char-in { to { opacity: 1; transform: none; } }
+@keyframes hero-photo-in { to { opacity: 1; transform: none; } }
+@keyframes hero-fade-up { to { opacity: 1; transform: none; } }
 #proyectos { scroll-margin-top: 24px; }
 
 @media (max-width: 991px) {
@@ -194,6 +220,7 @@ img { max-width: 100%; display: block; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-photo img, .hero-photo.is-tilting img { transition: none; }
+  .hero-intro .hero-char, .hero-intro .hero-photo, .hero-intro .hero-lead, .hero-intro .hero-cta { animation: none; opacity: 1; transform: none; }
 }
 
 /* ===== Marcas con las que he trabajado (inicio) ===== */
