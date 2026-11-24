@@ -658,6 +658,21 @@ body.case-page .menu-button span { background: #fff; }
   letter-spacing: .06em;
 }
 .case-meta p { margin: 0; font-size: 18px; line-height: 1.4; }
+.case-meta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+  font-size: 16px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  opacity: .85;
+  transition: opacity .3s;
+}
+.case-meta-link:hover { opacity: 1; }
+.case-meta-link svg { width: 16px; height: 16px; flex: none; }
+.case-meta-link:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 
 .case-intro { padding: 120px 0 40px; }
 .case-lead {
@@ -1030,4 +1045,14 @@ body.case-page .menu-button span { background: #fff; }
   .case-finnta .case-hero-img { object-position: 68% center; }
   .color-roles { grid-template-columns: 1fr; gap: 10px; }
   .case-finnta .type-name { font-size: 44px; letter-spacing: -1.5px; }
+}
+
+/* Texto solo para lectores de pantalla */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
