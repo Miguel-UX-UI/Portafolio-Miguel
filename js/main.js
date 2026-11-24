@@ -15,11 +15,19 @@ if (container && typeof PROJECTS !== "undefined") PROJECTS.forEach((p) => {
     ? `<img class="case-study-logo" src="${p.logo}" alt="${p.client}" loading="lazy"${p.logoWidth ? ` style="--logo-w: ${p.logoWidth}px"` : ""} />`
     : `<span class="case-study-client">${p.client}</span>`;
 
+  const video = p.video
+    ? `<video class="case-study-video" muted loop playsinline preload="none" data-autoplay poster="${p.video.poster || ""}" aria-hidden="true">
+        ${p.video.webm ? `<source src="${p.video.webm}" type="video/webm" />` : ""}
+        ${p.video.mp4 ? `<source src="${p.video.mp4}" type="video/mp4" />` : ""}
+      </video>`
+    : "";
+  if (p.video) card.classList.add("has-video");
+
   const button = p.link
     ? `<a href="${p.link}" class="case-study-button">Ver proyecto</a>`
     : `<span class="case-study-button is-disabled" aria-disabled="true">Próximamente</span>`;
 
-  card.innerHTML = `
+  card.innerHTML = `${video}
     <div class="case-study-content">
       <div class="case-study-brand">${brand}</div>
       <div class="case-study-text">
