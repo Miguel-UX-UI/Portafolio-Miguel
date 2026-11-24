@@ -204,7 +204,7 @@ img { max-width: 100%; display: block; }
   gap: 48px;
   width: min(1200px, 100% - 20px);
   margin: 0 auto;
-  padding: 0 0 120px;
+  padding: 0 0 104px;
 }
 .clients-grid {
   display: grid;
@@ -217,7 +217,7 @@ img { max-width: 100%; display: block; }
 .clients-tile {
   display: grid;
   place-items: center;
-  aspect-ratio: 17 / 10;
+  aspect-ratio: 11 / 5;
   border-radius: 12px;
   background: #ededed;
 }
@@ -250,6 +250,8 @@ img { max-width: 100%; display: block; }
   letter-spacing: -.02em;
 }
 .clients-text .hero-cta { margin-top: 32px; }
+.clients-cta { background: var(--red); }
+.clients-cta:hover { background: var(--red-dark); }
 
 @media (max-width: 991px) {
   .clients { grid-template-columns: 1fr; gap: 40px; padding-bottom: 96px; }
