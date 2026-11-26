@@ -1,6 +1,6 @@
 # Portafolio — Miguel Martínez
 
-Sitio estático (HTML + CSS + JS, sin dependencias) listo para publicar en GitHub Pages.
+Sitio estático (HTML + CSS + JS, sin dependencias) publicado en Vercel: **https://miguel-ux.vercel.app**
 
 ## Estructura
 
@@ -18,8 +18,10 @@ img/logos/          Logos de clientes/empresas
 
 Abre `index.html` en el navegador.
 
-## Publicar en GitHub Pages
+## Publicar
 
-1. Sube los cambios a la rama `main`.
-2. En GitHub: **Settings → Pages → Source: Deploy from a branch → `main` / root**.
-3. El sitio quedará en `https://miguel-ux-ui.github.io/Portafolio-Miguel/`.
+El sitio está en Vercel, conectado a este repositorio:
+
+- Cada cambio que llega a `main` se publica automáticamente en **https://miguel-ux.vercel.app**.
+- Las demás ramas y los pull requests reciben su propia URL de vista previa.
+- El dominio se administra en Vercel: **Settings → Domains**.
