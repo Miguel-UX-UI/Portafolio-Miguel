@@ -25,3 +25,4 @@ El sitio está en Vercel, conectado a este repositorio:
 - Cada cambio que llega a `main` se publica automáticamente en **https://miguel-ux.vercel.app**.
 - Las demás ramas y los pull requests reciben su propia URL de vista previa.
 - El dominio se administra en Vercel: **Settings → Domains**.
+- `vercel.json` activa `cleanUrls`: las páginas se abren sin `.html` (`/proyectos`, `/sobre-mi`, `/suintec`, `/finnta`), igual que en GitHub Pages. No lo borres o esos links darán 404.
