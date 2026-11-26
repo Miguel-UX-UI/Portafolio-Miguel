@@ -208,7 +208,33 @@ button.secondary:hover{background:var(--surface-2);filter:none;}
 .alert{font-size:.75rem;margin-top:4px;font-weight:600;}
 .ok{color:var(--green);} .warn{color:var(--yellow);} .over{color:var(--red);}
 select#txCat{max-width:100%;}
-#catConfig .row > button.secondary{flex:0 0 auto;min-width:0;width:40px;height:42px;padding:0;}
+/* Filas de categoría: input + botón eliminar alineados */
+.cat-row{display:flex;align-items:flex-end;gap:8px;margin-bottom:10px;}
+.cat-row > .cat-field{flex:1;min-width:0;}
+button.cat-del{flex:none;width:44px;height:44px;padding:0;border-radius:var(--r-ctl);display:grid;place-items:center;
+  background:transparent;color:var(--sub);border:1px solid var(--line);transition:background .15s,color .15s,border-color .15s;}
+button.cat-del svg{width:18px;height:18px;}
+button.cat-del:hover{filter:none;color:var(--red);border-color:color-mix(in srgb, var(--red) 45%, var(--line));background:color-mix(in srgb, var(--red) 8%, transparent);}
+
+/* Modal de confirmación */
+.modal-backdrop{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:20px;
+  background:rgba(0,20,40,.55);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);}
+.modal-backdrop.open{display:flex;animation:mFade .15s ease;}
+.modal{width:100%;max-width:400px;background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:var(--r-card);
+  padding:24px;box-shadow:0 24px 60px -20px rgba(0,0,0,.45);animation:mPop .18s ease;}
+.modal-ico{width:44px;height:44px;border-radius:999px;display:grid;place-items:center;margin-bottom:14px;
+  background:color-mix(in srgb, var(--red) 12%, transparent);color:var(--red);}
+.modal-ico svg{width:22px;height:22px;}
+.modal h3{margin:0 0 8px;font-size:1.2rem;font-weight:600;letter-spacing:-.02em;line-height:1.2;}
+.modal p{margin:0;color:var(--sub);font-size:.9rem;line-height:1.5;}
+.modal p strong{color:var(--text);}
+.modal-actions{display:flex;gap:10px;margin-top:22px;}
+.modal-actions button{flex:1;}
+.modal-actions .btn-cancel{background:transparent;color:var(--text);border:1px solid var(--line);}
+.modal-actions .btn-cancel:hover{background:var(--surface-2);filter:none;}
+.modal-actions .btn-danger{background:var(--red);color:#fff;}
+@keyframes mFade{from{opacity:0}to{opacity:1}}
+@keyframes mPop{from{opacity:0;transform:translateY(8px) scale(.98)}to{opacity:1;transform:none}}
 
 /* ---------- Home ---------- */
 .band{padding-block:clamp(56px, 9vw, 112px);overflow:hidden;}
@@ -646,6 +672,18 @@ select#txCat{max-width:100%;}
   });
 })();
 </script>
+
+<div class="modal-backdrop" id="delModal" role="dialog" aria-modal="true" aria-labelledby="delModalTitle">
+  <div class="modal">
+    <div class="modal-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6M10 11v6M14 11v6"/></svg></div>
+    <h3 id="delModalTitle">¿Eliminar la categoría <span id="delModalName"></span>?</h3>
+    <p id="delModalInfo"></p>
+    <div class="modal-actions">
+      <button type="button" class="btn-cancel" id="delModalCancel">Cancelar</button>
+      <button type="button" class="btn-danger" id="delModalConfirm">Sí, eliminar</button>
+    </div>
+  </div>
+</div>
 
 <script>
 window.claude = window.claude || { use: async () => null };
@@ -1232,9 +1270,9 @@ function renderConfig(){
   el.innerHTML = Object.entries(state.budgets).map(([cat,b])=>{
     const pct = ingreso>0 ? (b/ingreso*100).toFixed(1)+"% del ingreso" : "";
     return `
-    <div class="row" style="align-items:end;margin-bottom:6px;">
-      <div style="flex:2;"><label>${cat}${pct?` · <span style="color:var(--accent);">${pct}</span>`:""}</label><input type="text" inputmode="decimal" value="${b}" data-budget-cat="${cat}"></div>
-      <button class="secondary" style="flex:0;" data-delcat="${cat}">✕</button>
+    <div class="cat-row">
+      <div class="cat-field"><label>${cat}${pct?` · <span style="color:var(--accent);">${pct}</span>`:""}</label><input type="text" inputmode="decimal" value="${b}" data-budget-cat="${cat}"></div>
+      <button type="button" class="cat-del" data-delcat="${cat}" aria-label="Eliminar categoría ${cat}" title="Eliminar categoría"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6M10 11v6M14 11v6"/></svg></button>
     </div>`;
   }).join("");
 }
@@ -1263,10 +1301,36 @@ document.getElementById("txList").addEventListener("click", (e)=>{
   const cancelBtn = e.target.closest("[data-cancel-id]");
   if(cancelBtn){ cancelEdit(); return; }
 });
+/* Confirmación antes de eliminar una categoría */
+let pendingDelCat = null, lastFocusEl = null;
+function openDelModal(cat){
+  pendingDelCat = cat;
+  lastFocusEl = document.activeElement;
+  const usos = state.tx.filter(t=>t.type==="gasto" && t.cat===cat).length;
+  document.getElementById("delModalName").textContent = cat;
+  document.getElementById("delModalInfo").textContent = usos
+    ? `Tiene ${usos} movimiento${usos===1?"":"s"} registrado${usos===1?"":"s"}; esos se conservan en el historial, pero la categoría deja de tener presupuesto.`
+    : "No tiene movimientos registrados.";
+  document.getElementById("delModal").classList.add("open");
+  document.getElementById("delModalCancel").focus();
+}
+function closeDelModal(){
+  pendingDelCat = null;
+  document.getElementById("delModal").classList.remove("open");
+  if(lastFocusEl && lastFocusEl.focus) lastFocusEl.focus();
+}
 document.getElementById("catConfig").addEventListener("click", (e)=>{
   const btn = e.target.closest("[data-delcat]");
-  if(btn) delCategory(btn.getAttribute("data-delcat"));
+  if(btn) openDelModal(btn.getAttribute("data-delcat"));
 });
+document.getElementById("delModalCancel").addEventListener("click", closeDelModal);
+document.getElementById("delModalConfirm").addEventListener("click", ()=>{
+  const cat = pendingDelCat;
+  closeDelModal();
+  if(cat!==null){ delCategory(cat); showMsg(`🗑️ Categoría "${cat}" eliminada`, "ok"); }
+});
+document.getElementById("delModal").addEventListener("click", (e)=>{ if(e.target.id==="delModal") closeDelModal(); });
+document.addEventListener("keydown", (e)=>{ if(e.key==="Escape" && document.getElementById("delModal").classList.contains("open")) closeDelModal(); });
 document.getElementById("catConfig").addEventListener("change", (e)=>{
   const inp = e.target.closest("[data-budget-cat]");
   if(inp) updateBudget(inp.getAttribute("data-budget-cat"), inp.value);
